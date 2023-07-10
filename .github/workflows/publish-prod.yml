@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Npm version
-        run: cd ./dist && npm version --no-git-tag-version 4.1.4
+        run: cd ./dist && npm version --no-git-tag-version 4.1.5
 
       - name: Build
         env:
@@ -47,6 +47,6 @@ jobs:
 
       - name: Publish
         run: |
-          npm unpublish @one-bridge/apg-js@4.1.4
+          npm unpublish @one-bridge/apg-js@4.1.5
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
           npm publish
