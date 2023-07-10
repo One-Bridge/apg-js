@@ -1,6 +1,6 @@
 {
   "name": "@one-bridge/apg-js",
-  "version": "4.1.6",
+  "version": "4.1.5",
   "description": "JavaScript APG, an ABNF Parser Generator",
   "main": "index.js",
   "scripts": {
