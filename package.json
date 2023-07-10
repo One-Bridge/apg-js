@@ -1,5 +1,5 @@
 {
-  "name": "apg-js",
+  "name": "@one-bridge/apg-js",
   "version": "4.1.4",
   "description": "JavaScript APG, an ABNF Parser Generator",
   "main": "index.js",
