@@ -4,7 +4,7 @@ console.log(process.cwd());
 let toless = require("./jsonToLESS.js");
 let tojs = require("./jsonToCLASS_.js");
 let emitcss = require("./cssToJS.js");
-let exec = require("child_process").exec;
+const { exec } = require('child_process');
 
 // 1. Create ./dist/temp.css (temporary, non-compressed)
 toless("./dev/style.json", "./temp.less");

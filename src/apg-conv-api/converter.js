@@ -11,7 +11,8 @@
 
 'use strict;';
 
-const thisThis = this;
+const { Buffer } = require('buffer');
+
 const trans = require('./transformers');
 
 /* types */
@@ -157,9 +158,6 @@ const validateSrc = function validateSrc(type, data) {
       }
     }
     return ret;
-  }
-  if (typeof type !== 'string' || type === '') {
-    throw new TypeError(`type: "${type}" not recognized`);
   }
   const ret = getType(type.toUpperCase());
   if (ret.base64) {
@@ -414,6 +412,7 @@ exports.encode = function exportsEncode(type, chars) {
 };
 // Converts data of type `srcType` to data of type `dstType`.
 // `srcData` may be a JavaScript String, or node.js Buffer, depending on the corresponding type.
-exports.convert = function convert(srcType, srcData, dstType) {
-  return thisThis.encode(dstType, thisThis.decode(srcType, srcData));
+const convert = function convert(srcType, srcData, dstType) {
+  return exports.encode(dstType, exports.decode(srcType, srcData));
 };
+exports.convert = convert;

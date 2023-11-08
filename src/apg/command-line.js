@@ -15,6 +15,7 @@
 module.exports = function commandLine(args) {
   const fs = require('fs');
   const path = require('path');
+  const { Buffer } = require('buffer');
   const converter = require('../apg-conv-api/converter');
   const helpScreen = function helpScreen(helpArgs) {
     let help = 'Usage: apg options\n';
@@ -53,7 +54,7 @@ module.exports = function commandLine(args) {
     return help;
   };
   const version = function version() {
-    return 'JavaScript APG, version 4.0.0\nCopyright (C) 2021 Lowell D. Thomas, all rights reserved\n';
+    return 'JavaScript APG, version 4.2.1\nCopyright (C) 2023 Lowell D. Thomas, all rights reserved\n';
   };
   const STRICTL = '--strict';
   const STRICTS = '-s';
@@ -93,6 +94,7 @@ module.exports = function commandLine(args) {
       const kv = args[i].split('=');
       if (kv.length === 2) {
         key = kv[0].toLowerCase();
+        // eslint-disable-next-line prefer-destructuring
         value = kv[1];
       } else if (kv.length === 1) {
         key = kv[0].toLowerCase();

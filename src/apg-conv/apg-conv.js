@@ -16,6 +16,7 @@
 module.exports = function exfn() {
   'use strict;';
 
+  const { Buffer } = require('buffer');
   const SRC_FILEL = '--src';
   const SRC_FILES = '-s';
   const SRC_TYPEL = '--src-type';
@@ -93,13 +94,6 @@ module.exports = function exfn() {
     }
 
     /* disable STRING type, allowed by converter, but not here */
-    if (srcType.toUpperCase() === 'STRING') {
-      throw new Error('Input type may not be STRING.');
-    }
-    if (dstType.toUpperCase() === 'STRING') {
-      throw new Error('Output type may not be STRING.');
-    }
-
     /* create file streams, if necessary */
     if (srcFile) {
       srcStream = fs.createReadStream(srcFile, { flags: 'r' });
