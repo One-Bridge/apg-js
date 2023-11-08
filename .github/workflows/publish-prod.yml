@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Npm version
-        run: cd ./dist && npm version --no-git-tag-version 4.1.6
+        run: cd ./dist && npm version patch --no-git-tag-version
 
       - name: Build
         env:
